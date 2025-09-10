@@ -1,0 +1,547 @@
+// Vistaame Theme Custom Styles
+// Inspired by Other Girls website design
+
+// Color Variables
+// Copper palette (inspirado na referência)
+@vistaame-primary: #B8745A; // Copper
+@vistaame-secondary: #8B4513; // Brown
+@vistaame-accent: #F5E6D3; // Light cream
+@vistaame-text: #2C1810; // Dark brown
+@vistaame-white: #FFFFFF;
+
+// Header Styling
+.page-header {
+    background-color: @vistaame-white;
+    border-bottom: 1px solid #E5E5E5;
+    box-shadow: none;
+
+    .header.content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: nowrap;
+    }
+
+    .logo {
+        font-family: 'Georgia', serif;
+        font-size: 28px;
+        font-weight: bold;
+        color: @vistaame-primary;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 0;
+        order: 1;
+    }
+
+    // Keep nav on the same row, logo left, nav in the middle
+    .navigation-wrapper,
+    .navigation-section,
+    .navigation {
+        flex: 1 1 auto;
+        order: 2;
+        min-width: 0; // prevent overflow pushing items to next line
+    }
+
+    .navigation {
+        ul {
+            li {
+                a {
+                    color: @vistaame-primary;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-size: 13px;
+                    padding: 10px 15px;
+                    
+                    &:hover {
+                        color: darken(@vistaame-primary, 8%);
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    // Search + icons at the right
+    .block-search { margin-left: auto; order: 3; }
+    .header.links { margin-left: 16px; order: 4; }
+    .minicart-wrapper { margin-left: 12px; order: 4; }
+    .switcher-account, .switcher-wishlist { order: 4; }
+
+    // Search input styling (border & radius in copper)
+    .block-search {
+        .control input,
+        input.input-text {
+            border: 1px solid @vistaame-primary !important;
+            border-radius: 6px !important;
+            color: @vistaame-text;
+            outline: none;
+            box-shadow: none;
+        }
+
+        .action.search {
+            color: @vistaame-primary !important;
+            border-color: @vistaame-primary !important;
+        }
+    }
+}
+
+// Ensure any extra overrides are included last if present
+// (custom-override.css no longer includes DEBUG red styles)
+@import (optional, inline) "../custom-override.css";
+
+// Hero Slideshow Section
+.hero-slideshow {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    overflow: hidden;
+    
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        
+        &.active {
+            opacity: 1;
+        }
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+    }
+    
+    .slide-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: @vistaame-white;
+        max-width: 600px;
+        padding: 0 20px;
+        
+        h1 {
+            font-family: 'Georgia', serif;
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            
+            @media (max-width: 768px) {
+                font-size: 32px;
+            }
+        }
+        
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            
+            @media (max-width: 768px) {
+                font-size: 16px;
+            }
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: @vistaame-primary;
+            color: @vistaame-white;
+            padding: 15px 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                background-color: @vistaame-secondary;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+        }
+    }
+    
+    // Slideshow navigation dots
+    .slide-indicators {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 3;
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            
+            &.active {
+                background-color: @vistaame-primary;
+            }
+        }
+    }
+}
+
+// Product Carousel Section
+.product-carousel-section {
+    padding: 80px 0;
+    background-color: #FAFAFA;
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        
+        h2 {
+            font-family: 'Georgia', serif;
+            font-size: 36px;
+            color: @vistaame-text;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            color: #666;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    }
+    
+    .product-carousel {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        
+        .product-item {
+            background: @vistaame-white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 0 10px;
+            
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            }
+            
+            .product-image {
+                position: relative;
+                overflow: hidden;
+                
+                img {
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                    transition: transform 0.3s ease;
+                }
+                
+                &:hover img {
+                    transform: scale(1.05);
+                }
+            }
+            
+            .product-info {
+                padding: 20px;
+                
+                .product-name {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: @vistaame-text;
+                    margin-bottom: 10px;
+                    line-height: 1.4;
+                }
+                
+                .product-price {
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: @vistaame-primary;
+                    margin-bottom: 15px;
+                }
+                
+                .add-to-cart {
+                    width: 100%;
+                    background-color: @vistaame-primary;
+                    color: @vistaame-white;
+                    border: none;
+                    padding: 12px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    
+                    &:hover {
+                        background-color: @vistaame-secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Mobile Responsiveness
+@media (max-width: 768px) {
+    .page-header {
+        .header.content {
+            padding: 10px 15px;
+        }
+        
+        .logo {
+            font-size: 22px;
+        }
+        
+        .navigation ul li a {
+            font-size: 12px;
+            padding: 8px 10px;
+        }
+    }
+    
+    .hero-slideshow {
+        height: 60vh;
+        min-height: 400px;
+        
+        .slide-content {
+            padding: 0 15px;
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
+        }
+    }
+    
+    .product-carousel-section {
+        padding: 60px 0;
+        
+        .section-title h2 {
+            font-size: 28px;
+        }
+        
+        .product-carousel {
+            padding: 0 15px;
+            
+            .product-item {
+                margin: 0 5px;
+                
+                .product-image img {
+                    height: 250px;
+                }
+                
+                .product-info {
+                    padding: 15px;
+                }
+            }
+        }
+    }
+}
+
+// Notification styles
+.vistaame-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: @vistaame-primary;
+    color: @vistaame-white;
+    padding: 15px 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 9999;
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    max-width: 300px;
+    
+    &.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+// Product carousel enhancements
+.product-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: @vistaame-primary;
+        border-radius: 4px;
+        
+        &:hover {
+            background: @vistaame-secondary;
+        }
+    }
+    
+    .product-item {
+        flex: 0 0 280px;
+        
+        &.hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+        
+        .add-to-cart {
+            &.added {
+                background-color: #28a745;
+                
+                &:hover {
+                    background-color: #218838;
+                }
+            }
+        }
+    }
+}
+
+// Utility Classes
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
+// Breeze Navigation Overrides (Vistaame Menu Colors)
+// Increase specificity with .breeze-theme to override Breeze defaults
+.breeze-theme {
+    .navigation {
+        // Top-level items
+        .level0 > a.level-top,
+        ul > li.level0 > a.level-top,
+        ul > li.level0 > a.level-top:link,
+        ul > li.level0 > a.level-top:visited {
+            color: @vistaame-primary !important;
+            padding: 10px 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            transition: color .2s ease, background-color .2s ease;
+        }
+
+        // Hover, active and parent-active states
+        .level0 > a.level-top:hover,
+        .level0.active > a.level-top,
+        .level0.has-active > a.level-top,
+        ul > li.level0:hover > a.level-top,
+        ul > li.level0.active > a.level-top,
+        ul > li.level0.has-active > a.level-top {
+            color: darken(@vistaame-primary, 8%) !important;
+            background-color: transparent !important;
+        }
+
+        // Submenu panel
+        .submenu {
+            background-color: @vistaame-white;
+            border-top: 2px solid @vistaame-primary;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+            a,
+            a:link,
+            a:visited {
+                color: @vistaame-primary !important;
+                padding: 8px 12px;
+                transition: color .2s ease, background-color .2s ease;
+
+                &:hover {
+                    color: darken(@vistaame-primary, 8%) !important;
+                    background-color: fade(@vistaame-primary, 10%) !important;
+                }
+            }
+        }
+
+        // Current/active trail inside submenu
+        .submenu .active > a,
+        .submenu .has-active > a {
+            color: darken(@vistaame-primary, 8%) !important;
+            background-color: fade(@vistaame-primary, 12%) !important;
+        }
+
+        // Active indicator on top-level
+        .level0.active > a.level-top,
+        .level0.has-active > a.level-top {
+            border-bottom: 2px solid @vistaame-primary;
+        }
+    }
+
+    // Header nav toggle (mobile)
+    .action.nav-toggle {
+        color: @vistaame-primary !important;
+
+        &:hover {
+            color: darken(@vistaame-primary, 8%) !important;
+        }
+    }
+
+    // Header icons (search, account, wishlist, cart)
+    .block-search .action.search,
+    .switcher-account .action.toggle.switcher-trigger,
+    .switcher-wishlist .action.toggle.switcher-trigger,
+    .minicart-wrapper .action.showcart {
+        color: @vistaame-primary !important;
+        
+        &:hover { color: darken(@vistaame-primary, 8%) !important; }
+    }
+}
+
+// Mobile adjustments
+@media (max-width: 768px) {
+    .breeze-theme {
+        .navigation {
+            .level0 > a.level-top {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+            .submenu {
+                border-top: 1px solid fade(@vistaame-primary, 35%);
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Vistaame Homepage Layout
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Vistaame - Moda Feminina Exclusiva</title>
+        <meta name="description" content="Descubra a coleção exclusiva Vistaame. Moda feminina sofisticada com estilo único e qualidade premium."/>
+        <meta name="keywords" content="moda feminina, roupas exclusivas, estilo, elegância, vistaame"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Cms\Block\Page" name="cms_page" template="Magento_Cms::page/home.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,17 @@
+{
+    "name": "vistaame/theme-frontend-vistaame",
+    "description": "Vistaame custom theme based on Breeze Blank",
+    "type": "magento2-theme",
+    "version": "1.0.0",
+    "license": "proprietary",
+    "require": {
+        "php": "~8.1.0||~8.2.0||~8.3.0",
+        "magento/framework": "*",
+        "swissup/theme-frontend-breeze-blank": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- Place navigation on the same row as the logo by moving the navigation container into header.content -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- In most themes (including Breeze), the navigation lives in the 'navigation.sections' container. -->
+        <move element="navigation.sections" destination="header.content" after="logo" />
+    </body>
+</page>

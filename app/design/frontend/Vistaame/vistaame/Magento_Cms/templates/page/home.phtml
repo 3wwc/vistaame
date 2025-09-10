@@ -1,0 +1,182 @@
+<?php
+/**
+ * Vistaame Homepage Template
+ * Inspired by Other Girls website design
+ */
+?>
+
+<!-- Hero Slideshow Section -->
+<div class="hero-slideshow" id="heroSlideshow">
+    <div class="slide active" style="background-image: url('https://picsum.photos/1920/800?random=1');">
+        <div class="slide-content">
+            <h1>Essence Collection</h1>
+            <p>Descubra um jeito que você nunca viu. Uma coleção única que combina elegância e modernidade.</p>
+            <a href="#" class="cta-button">Descobrir Agora</a>
+        </div>
+    </div>
+    
+    <div class="slide" style="background-image: url('https://picsum.photos/1920/800?random=2');">
+        <div class="slide-content">
+            <h1>Nova Coleção</h1>
+            <p>Peças exclusivas que definem seu estilo único. Qualidade premium em cada detalhe.</p>
+            <a href="#" class="cta-button">Ver Coleção</a>
+        </div>
+    </div>
+    
+    <div class="slide" style="background-image: url('https://picsum.photos/1920/800?random=3');">
+        <div class="slide-content">
+            <h1>Estilo Atemporal</h1>
+            <p>Tendências que transcendem estações. Vista-se com confiança e sofisticação.</p>
+            <a href="#" class="cta-button">Comprar Agora</a>
+        </div>
+    </div>
+    
+    <!-- Slide Indicators -->
+    <div class="slide-indicators">
+        <div class="indicator active" data-slide="0"></div>
+        <div class="indicator" data-slide="1"></div>
+        <div class="indicator" data-slide="2"></div>
+    </div>
+</div>
+
+<!-- Featured Products Section -->
+<div class="product-carousel-section">
+    <div class="section-title">
+        <h2>Produtos em Destaque</h2>
+        <p>Descubra nossa seleção especial de peças que definem tendências e expressam personalidade única.</p>
+    </div>
+    
+    <div class="product-carousel" id="featuredProducts">
+        <!-- Product items will be loaded here via JavaScript/AJAX -->
+        <div class="product-item">
+            <div class="product-image">
+                <img src="https://picsum.photos/300/300?random=10" alt="Produto 1">
+            </div>
+            <div class="product-info">
+                <div class="product-name">Blusa Elegante Premium</div>
+                <div class="product-price">R$ 189,90</div>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+        
+        <div class="product-item">
+            <div class="product-image">
+                <img src="https://picsum.photos/300/300?random=11" alt="Produto 2">
+            </div>
+            <div class="product-info">
+                <div class="product-name">Vestido Casual Chic</div>
+                <div class="product-price">R$ 259,90</div>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+        
+        <div class="product-item">
+            <div class="product-image">
+                <img src="https://picsum.photos/300/300?random=12" alt="Produto 3">
+            </div>
+            <div class="product-info">
+                <div class="product-name">Conjunto Sofisticado</div>
+                <div class="product-price">R$ 349,90</div>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+        
+        <div class="product-item">
+            <div class="product-image">
+                <img src="https://picsum.photos/300/300?random=13" alt="Produto 4">
+            </div>
+            <div class="product-info">
+                <div class="product-name">Saia Moderna Trend</div>
+                <div class="product-price">R$ 149,90</div>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Arrivals Section -->
+<div class="product-carousel-section" style="background-color: #fff;">
+    <div class="section-title">
+        <h2>Novidades</h2>
+        <p>As últimas tendências chegaram. Seja a primeira a descobrir o que há de mais novo em moda.</p>
+    </div>
+    
+    <div class="product-carousel" id="newArrivals">
+        <div class="product-item">
+            <div class="product-image">
+                <img src="https://picsum.photos/300/300?random=20" alt="Novidade 1">
+            </div>
+            <div class="product-info">
+                <div class="product-name">Top Exclusivo Limited</div>
+                <div class="product-price">R$ 129,90</div>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+        
+        <div class="product-item">
+            <div class="product-image">
+                <img src="https://picsum.photos/300/300?random=21" alt="Novidade 2">
+            </div>
+            <div class="product-info">
+                <div class="product-name">Calça Trend Style</div>
+                <div class="product-price">R$ 219,90</div>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+        
+        <div class="product-item">
+            <div class="product-image">
+                <img src="https://picsum.photos/300/300?random=22" alt="Novidade 3">
+            </div>
+            <div class="product-info">
+                <div class="product-name">Jaqueta Urban Chic</div>
+                <div class="product-price">R$ 389,90</div>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+        
+        <div class="product-item">
+            <div class="product-image">
+                <img src="https://picsum.photos/300/300?random=23" alt="Novidade 4">
+            </div>
+            <div class="product-info">
+                <div class="product-name">Acessório Statement</div>
+                <div class="product-price">R$ 89,90</div>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Slideshow functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    // Auto-advance slides
+    setInterval(nextSlide, 5000);
+    
+    // Manual navigation
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+    });
+});
+</script>

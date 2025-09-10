@@ -1,0 +1,43 @@
+/* Vistaame final colors (copper palette) */
+body.breeze-theme .navigation .level0 > a.level-top,
+body.breeze-theme .navigation ul > li.level0 > a.level-top,
+body.breeze-theme .navigation ul > li.level0 > a.level-top:link,
+body.breeze-theme .navigation ul > li.level0 > a.level-top:visited {
+  color: #B8745A !important; /* copper */
+}
+
+body.breeze-theme .navigation .level0:hover > a.level-top,
+body.breeze-theme .navigation .level0.active > a.level-top,
+body.breeze-theme .navigation .level0.has-active > a.level-top {
+  color: #9E604B !important; /* darken copper */
+  background: transparent !important;
+  border-bottom: 2px solid #B8745A;
+}
+
+body.breeze-theme .navigation .submenu {
+  background: #FFFFFF !important; /* @vistaame-white */
+  border-top: 2px solid #B8745A;
+}
+body.breeze-theme .navigation .submenu a,
+body.breeze-theme .navigation .submenu a:link,
+body.breeze-theme .navigation .submenu a:visited {
+  color: #B8745A !important;
+}
+body.breeze-theme .navigation .submenu a:hover {
+  color: #9E604B !important;
+  background: rgba(184, 116, 90, 0.12) !important;
+}
+
+/* Header icons (search, account, wishlist, cart) */
+body.breeze-theme .block-search .action.search,
+body.breeze-theme .switcher-account .action.toggle.switcher-trigger,
+body.breeze-theme .switcher-wishlist .action.toggle.switcher-trigger,
+body.breeze-theme .minicart-wrapper .action.showcart {
+  color: #B8745A !important;
+}
+body.breeze-theme .block-search .action.search:hover,
+body.breeze-theme .switcher-account .action.toggle.switcher-trigger:hover,
+body.breeze-theme .switcher-wishlist .action.toggle.switcher-trigger:hover,
+body.breeze-theme .minicart-wrapper .action.showcart:hover {
+  color: #9E604B !important;
+}

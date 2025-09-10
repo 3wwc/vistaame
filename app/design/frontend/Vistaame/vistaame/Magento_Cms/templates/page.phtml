@@ -1,0 +1,19 @@
+<?php
+/**
+ * Vistaame CMS Page Template Override
+ * This overrides the default CMS page template to inject our custom homepage
+ */
+
+$pageId = $block->getPage()->getIdentifier();
+
+if ($pageId === 'home') {
+    // Load our custom homepage template
+    echo $this->getLayout()
+        ->createBlock('Magento\Framework\View\Element\Template')
+        ->setTemplate('Magento_Cms::page/home.phtml')
+        ->toHtml();
+} else {
+    // Use default CMS page rendering for other pages
+    echo $block->getPage()->getContent();
+}
+?>
